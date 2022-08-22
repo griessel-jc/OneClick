@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BigCarTheft.mp3-09bb6d52459d5f1d64b779fa708f6c42.mp3str"
+
+[deps]
+
+source_file="res://Audio/BigCarTheft.mp3"
+dest_files=[ "res://.import/BigCarTheft.mp3-09bb6d52459d5f1d64b779fa708f6c42.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

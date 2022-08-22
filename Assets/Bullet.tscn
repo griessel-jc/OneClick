@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Suck 2.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Bullet" type="Sprite"]
+modulate = Color( 0.0705882, 0.8, 0.14902, 1 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy_damager"]]
+
+[node name="ActualHitbox" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Effects"
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
